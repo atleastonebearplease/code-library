@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles.css">
+  <title>HTML Elements Showcase</title>
+</head>
+<body>
+
+  <header>
+    <h1>Main Heading (h1)</h1>
+    <nav>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h2>Headings</h2>
+    <h1>Heading 1</h1>
+    <h2>Heading 2</h2>
+    <h3>Heading 3</h3>
+    <h4>Heading 4</h4>
+    <h5>Heading 5</h5>
+    <h6>Heading 6</h6>
+  </section>
+
+  <section>
+    <h2>Text Elements</h2>
+    <p>This is a paragraph of text. <strong>Strong text</strong>, <em>emphasized text</em>, <u>underlined text</u>, <mark>highlighted text</mark>.</p>
+    <blockquote>This is a blockquote.</blockquote>
+    <pre>
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+    </pre>
+    <code>console.log("Hello, world!");</code>
+  </section>
+
+  <section>
+    <h2>Lists</h2>
+    <h3>Unordered List</h3>
+    <ul>
+      <li>Item One</li>
+      <li>Item Two</li>
+      <li>Item Three</li>
+    </ul>
+
+    <h3>Ordered List</h3>
+    <ol>
+      <li>First</li>
+      <li>Second</li>
+      <li>Third</li>
+    </ol>
+
+    <h3>Definition List</h3>
+    <dl>
+      <dt>HTML</dt>
+      <dd>HyperText Markup Language</dd>
+      <dt>CSS</dt>
+      <dd>Cascading Style Sheets</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Forms</h2>
+    <form>
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email"><br><br>
+
+      <label for="message">Message:</label><br>
+      <textarea id="message" name="message" rows="4" cols="30"></textarea><br><br>
+
+      <label>Gender:</label>
+      <input type="radio" id="male" name="gender" value="male"><label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female"><label for="female">Female</label><br><br>
+
+      <label for="subscribe">Subscribe:</label>
+      <input type="checkbox" id="subscribe" name="subscribe"><br><br>
+
+      <label for="color">Favorite Color:</label>
+      <input type="color" id="color" name="color"><br><br>
+
+      <label for="range">Volume:</label>
+      <input type="range" id="range" name="range" min="0" max="100"><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+  </section>
+
+  <section>
+    <h2>Tables</h2>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Job</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Alice</td>
+          <td>30</td>
+          <td>Engineer</td>
+        </tr>
+        <tr>
+          <td>Bob</td>
+          <td>25</td>
+          <td>Designer</td>
+        </tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Media</h2>
+    <img src="https://via.placeholder.com/150" alt="Placeholder Image">
+    <br><br>
+    <video controls width="250">
+      <source src="sample.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+    <br><br>
+    <audio controls>
+      <source src="sample.mp3" type="audio/mpeg">
+      Your browser does not support the audio element.
+    </audio>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Your Website</p>
+  </footer>
+
+</body>
+</html>
