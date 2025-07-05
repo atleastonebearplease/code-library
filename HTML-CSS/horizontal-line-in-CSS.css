@@ -1,0 +1,38 @@
+.v-width {
+  position: relative;
+}
+
+.v-width:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  right: 0;
+  transform: translateY(-100%);
+  z-index: -1;
+  height: 1px;
+  background-color: #d4d4d4;
+}
+
+/*
+content: ""; : This must be present for the line to be rendered
+
+position: absolute: The pseudo-element (::before) is positioned absolutely relative to the nearest positioned ancestor (an ancestor with position: relative, absolute, or fixed).
+
+left: 0; right: 0;: This makes the element stretch horizontally from edge to edge.
+
+top: 50%; transform: translateY(-50%): Vertically centers the line within its containing block.
+
+height: 1px; background-color: #d4d4d4;: Makes it a 1-pixel horizontal line.
+
+z-index: -1: Puts it behind any other content with default z-index.
+
+Conditions Required:
+The parent element with class .v-width must have position: relative (or another positioning context) for this absolute positioning to work properly. Without it, the line may be positioned unexpectedly—likely relative to the <body>.
+
+The parent must have a visible height, or the top: 50% will have no visual effect (it will be 50% of zero height).
+
+Since it's a pseudo-element, you need to ensure that .v-width exists and is not display: none.
+
+
+*/
