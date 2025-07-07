@@ -1,3 +1,15 @@
+@property --primary-color {
+    syntax: "<color>";
+    inherits: false;
+    initial-value: #1f2937;
+}
+
+:root {
+    --secondary-color: #f9faf8;
+    --tertiary-color: #3882f6;
+    --section-text-color: #e5e7eb;
+}
+
 * {
     margin: 0px;
     padding: 0px;
@@ -16,7 +28,7 @@ body {
 }
 
 .header-section {
-    background-color: #1f2937;
+    background-color: var(--primary-color);
     padding: 24px;
 }
 
@@ -33,7 +45,7 @@ body {
 
 .header {
     width: 1000px;
-    color: #f9faf8;
+    color: var(--secondary-color);
     font-size: 24px;
     display: flex;
     justify-content: space-between;
@@ -42,7 +54,7 @@ body {
 
 .header li {
     font-size: 18px;
-    color: #e5e7eb;
+    color: var(--section-text-color);
     list-style: none;
 }
 
@@ -52,7 +64,7 @@ body {
 }
 
 .hero-text-section {
-    background-color: #1f2937;
+    background-color: var(--primary-color);
     display: flex;
 }
 
@@ -76,13 +88,13 @@ body {
 
 .hero-text > h2 {
     font-size: 48px;
-    color: #f9faf8;
+    color: var(--secondary-color);
     font-weight: 900;
     margin: 16px 0px;
 }
 
 .hero-text > p {
-    color: #e5e7eb;
+    color: var(--section-text-color);
 }
 
 .sign-up-button {
@@ -90,8 +102,8 @@ body {
     border-radius: 8px;
     padding: 8px 0px;
     font-weight: bold;
-    background-color: #3882f6;
-    color: #f9faf8;
+    background-color: var(--tertiary-color);
+    color: var(--secondary-color);
     border: none;
 }
 
@@ -136,7 +148,7 @@ body {
 .info-card-image {
     width: 150px;
     height: 150px;
-    border: 3px solid #3882f6;
+    border: 3px solid var(--tertiary-color);
     border-radius: 10%;
     min-width: none;
 }
@@ -147,7 +159,7 @@ body {
 }
 
 .quote-section {
-    background-color: #e5e7eb;
+    background-color: var(--section-text-color);
     padding: 120px 0px;
 }
 
@@ -185,7 +197,7 @@ body {
     width: 800px;
     padding: 0px 16px;
     height: 125px;
-    background-color: #3882f6;
+    background-color: var(--tertiary-color);
     border-radius: 10px;
     justify-content: space-evenly;
     align-items: center;
@@ -194,7 +206,7 @@ body {
 
 .sign-up-text-title,
 .sign-up-text-body {
-    color: #e5e7eb;
+    color: var(--section-text-color);
 }
 
 .sign-up-text-title {
@@ -216,5 +228,5 @@ body {
 }
 
 .footer {
-    color: #f9faf8;
+    color: var(--secondary-color);
 }
