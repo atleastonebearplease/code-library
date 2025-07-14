@@ -5,8 +5,59 @@
 }
 
 .main-button {
-    background-color: lightgrey;
+    display: inline-block;
+    position: relative;
+    background-color: whitesmoke;
     border-radius: 10px;
     max-width: fit-content;
     padding: 10px;
+    position: relative;
+    font-weight: 500;
+    font-family: "ui-sans-serif";
+    font-size: 1.1rem;
+}
+
+.main-button:hover {
+    background-color: lightgrey;
+    
+}
+
+div {
+    border: 1px solid black;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    border: 1px solid grey;
+    border-radius: 1.25rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    padding: 12px 16px;
+    z-index: 1;
+    top: 110%;
+    left: 80%;
+
+    min-width: 20vw;
+}
+
+
+
+/*Make the drop down menu larger to make it easier to mouse over and look prett*/
+.dropdown-content::before {
+    --expansion-percentage: -10%;
+    content: "";
+    position: absolute;
+    top: var(--expansion-percentage);
+    bottom: var(--expansion-percentage);
+    left: var(--expansion-percentage);
+    right: var(--expansion-percentage);
+    z-index: -1;
+}
+
+.main-button:hover .dropdown-content{
+    display: block;
+}
+
+.triangle {
+    transform: scale(1, .75);
 }
