@@ -1,6 +1,10 @@
 @import url("josh-c-styles.css");
 
 :root {
+  --dark: #00bd9d;
+}
+
+:root {
   font-size: 18px;
 }
 
@@ -9,7 +13,15 @@ div {
 }
 
 .parent {
-  background: blue;
+  flex: 0;
+  background: var(--dark);
+  border-radius: .5rem;
+  width: clamp(30rem, 100% - 2rem, 50rem);
+  margin: auto;
+}
+
+div.parent > div {
+  border-radius: 5px;
 }
 
 .child1{
