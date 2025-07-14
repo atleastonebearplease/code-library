@@ -1,3 +1,12 @@
+@import url("..\\josh-c-styles.css");
+
 * {
     box-sizing: border-box;
+}
+
+.main-button {
+    background-color: lightgrey;
+    border-radius: 10px;
+    max-width: fit-content;
+    padding: 10px;
 }
