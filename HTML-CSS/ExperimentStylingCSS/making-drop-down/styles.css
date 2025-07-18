@@ -1,17 +1,14 @@
 @import url("..\\josh-c-styles.css");
 
+:root {
+    --primary-hover-color: rgb(221, 220, 220);
+    --secondary-hover-color: whitesmoke;
+}
+
 * {
     box-sizing: border-box;
     font-family: "Ubuntu-Sans", sans-serif;
 }
-
-/*
-Degug styles
-
-.div { 
-    border: 1px solid black;
-}
-*/
 
 .main-button {
     display: inline-block;
@@ -25,7 +22,7 @@ Degug styles
 }
 
 .main-button:hover {
-    background-color: rgb(221, 220, 220);
+    background-color: var(--primary-hover-color);
     
 }
 
@@ -62,7 +59,7 @@ Degug styles
 }
 
 .dropdown-button:hover {
-    background-color: whitesmoke;
+    background-color: var(--secondary-hover-color);
 }
 
 .dropdown-button button {
@@ -76,7 +73,7 @@ Degug styles
 }
 
 .dropdown-button button:hover {
-    background-color: rgb(221, 220, 220);
+    background-color: var(--primary-hover-color);
 }
 
 .small-text {
