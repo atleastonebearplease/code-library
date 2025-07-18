@@ -40,7 +40,35 @@ div.parent > div {
 
 form input {
   margin-left: 10px;
-  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 3px 0px rgba(0, 0, 0, 0.2);
   display: block;
   margin: 5px;
+  border: 1px solid black;
 }
+
+div.form-entry {
+  display: flex;
+  align-items: center;
+}
+
+#dob {
+  min-width: 50%;
+}
+
+label[for=car_model]{
+  margin-right: 1ch;
+}
+
+fieldset {
+  background-color: rgba(0, 0, 0, 0.02)
+}
+
+fieldset label {
+  margin-left: 4px;
+}
+
+input[type=radio]{
+  display:inline-block;
+  box-shadow: none;
+}
+
