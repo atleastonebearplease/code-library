@@ -37,3 +37,10 @@ div.parent > div {
 .child3{
   background: pink;
 }
+
+form input {
+  margin-left: 10px;
+  box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.1);
+  display: block;
+  margin: 5px;
+}
