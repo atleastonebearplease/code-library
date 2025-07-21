@@ -99,6 +99,75 @@
 			</p>
 		</section>
 	</form>
+
+	<form action="">
+		<fieldset>
+			<legend>Choose all the vegetables you like to eat (Checkboxes)</legend>
+				<ul>
+					<li>
+						<label for="carrots">Carrots</label>
+						<input type="checkbox" id="carrots" name="vegetable" value="carrots" checked>
+					</li>
+					<li>
+						<label for="peas">Peas</label>
+						<input type="checkbox" id="peas" name="vegetable" value="peas">
+					</li>
+					<li>
+						<label for="cabbage">Cabbage</label>
+						<input type="checkbox" id="cabbage" name="vegetable" value="cabbage">
+					</li>
+				</ul>
+		</fieldset>
+
+		<fieldset>
+			<legend>What is your favorite meal? (Radio buttons)</legend>
+			<ul>
+				<li>
+					<label for="soup">Soup</label>
+					<input type="radio" id="soup" name="meal" value="soup"/>
+				</li>
+				<li>
+					<label for="curry">Curry</label>
+					<input type="radio" id="curry" name="meal" value="curry"/>
+				</li>
+				<li>
+					<label for="pizza">Pizza</label>
+					<input type="radio" id="pizza" name="meal" value="pizza"/>
+				</li>
+			</ul>
+		</fieldset>
+		<fieldset>
+			<legend>Different Button Types</legend>
+			<p>Using &lt;input></p>
+			<p>
+				<input type="submit" value="Submit this form" />
+				<input type="reset" value="Reset this form" />
+				<input type="button" value="Do Nothing without JavaScript" />
+			</p>
+			<p>Using &lt;button></p>
+			<p>
+				<button type="submit">Submit this form</button>
+				<button type="reset">Reset this form</button>
+				<button type="button">Do Nothing without JavaScript</button>
+			</p>
+
+			<p>
+				This is an image button
+				<input type="image" alt="Click me!" src="my-img.png" width="80" height="30" />
+			</p>
+		</fieldset>
+		<fieldset>
+			<legend>File picker buttons</legend>
+			<p>File picker for images</p>
+			<input type="file" name="file" id="file" accept="image/*" multiple>
+
+			<p>File picker for capturing from mobile devices. This is camera, camcorder, and microphone respectively</p>
+			<input type="file" accept="image/*;capture=camera">
+			<input type="file" accept="video/*;capture=camcorder" />
+			<input type="file" accept="audio/*;capture=microphone" />
+
+		</fieldset>
+	</form>
     
 </body>
 </html>
