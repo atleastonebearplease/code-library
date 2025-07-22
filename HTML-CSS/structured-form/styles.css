@@ -15,7 +15,8 @@ textarea {
 
 body {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
 form {
@@ -25,8 +26,7 @@ form {
     border-radius: 20px;
 
     padding: 20px 20px;
-
-    margin-left: 10%;
+    margin-right: 2%;
     margin-bottom: 3%;
 
     box-shadow: 
