@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+	
     <title>Title Here</title>
 </head>
 <body>
@@ -201,9 +202,115 @@
 		<p>
 			<label for="price">Choose a maximum house price:</label>
 			<input type="range" name="price" id="price" min="50000" max="500000" step="1000" value="250000">
-			<output class="price-output" for="price"></output>
+			<output class="price-output" for="price">Hey there</output>
+		</p>
+		<p>
+			<label for="date">Enter the date:</label>
+			<input type="date" name="date" id="date">
+		</p>
+		<p>
+			<label for="datetime">Choose a date and time for your party (datetime-local)</label>
+			<input type="datetime-local" name="datetime" id="datetime" step="900" >
+		</p>
+		<p>
+			<label for="month">Enter the month</label>
+			<input type="month" name="month" id="month">
+		</p>
+		<p>
+			<label for="time">Enter a time:</label>
+			<input type="time" name="time" id="time">
+		</p>
+		<p>
+			<label for="week">Enter the week</label>
+			<input type="week" name="week" id="week">
+		</p>
+		<p>
+			<label for="myDate">When are you available this summer</label>
+			<input type="date" name="myData" min="2025-06-01" max="2025-08-31" step="7" id="myData">
+		</p>
+		<p>
+			<label for="color">Pick a color:</label>
+			<input type="color" name="color" id="color">
+		</p>
+	</form>
+
+	<form action="">
+		<h1>Other Form Controls</h1>
+		<p>
+			<p><label for="textarea">Multi-line text area</label></p>
+			<textarea name="textarea" id="textarea" cols="30" rows="8"></textarea>
+		</p>
+		<p>
+			<label for="simele">Choose a fruit</label>
+			<select name="simple" id="simple">
+				<option value="">Banana</option>
+				<option value="" selected>Cherry</option>
+				<option value="">Lemon</option>
+			</select>
+		</p>
+		<p>
+			<label for="groups">Choose a fruit or vegetable (optgroup)</label>
+			<select name="groups" id="groups">
+				<optgroup label="Fruits">
+					<option value="">Banana</option>
+					<option value="">Cherry</option>
+					<option value="">Lemon</option>
+				</optgroup>
+				<optgroup label="Vegetables">
+					<option>Carrot</option>
+					<option>Eggplant</option>
+					<option>Potato</option>
+				</optgroup>
+			</select>
+		</p>
+		<p>
+			<label for="multi">Multiple choice select box (use ctrl+click on desktop)</label>
+			<p>
+				<select name="multi" id="multi" multiple size="5">
+					<optgroup label="fruits">
+						<option>Banana</option>
+						<option selected>Cherry</option>
+						<option>Lemon</option>
+					</optgroup>
+					<optgroup label="vegetables">
+						<option>Carrot</option>
+						<option>Eggplant</option>
+						<option>Potato</option>
+					</optgroup>
+				</select>
+			</p>
+		</p>
+		<p>
+			<label for="myFruit">What's your favorite fruit?</label>
+			<input type="text" name="myFruit" id="myFruit" list="mySuggestion" />
+			<datalist id="mySuggestion">
+				<option>Apple</option>
+				<option>Banana</option>
+				<option>Blackberry</option>
+				<option>Blueberry</option>
+				<option>Lemon</option>
+				<option>Lychee</option>
+				<option>Peach</option>
+				<option>Pear</option>
+			</datalist>
+		</p>
+		<p>
+		<!--This can also be done to add labels to the markers. You would add a label to each option as 
+		an attribute. Then you would need to use CSS to set them to be displayed and align them. You can make
+		them vertical with writing-mode: vertical-lr; -->
+			<label for="temp">Choose a comfortable temperature: (data list with slider)</label><br />
+			<input type="range" id="temp" name="temp" list="markers" />
+	
+			<datalist id="markers">
+				<option value="0"></option>
+				<option value="25"></option>
+				<option value="50"></option>
+				<option value="75"></option>
+				<option value="100"></option>
+			</datalist>
 		</p>
 	</form>
     
+	<script src="javascript.js"></script>
 </body>
 </html>
