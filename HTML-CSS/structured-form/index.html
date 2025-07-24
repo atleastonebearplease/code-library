@@ -9,7 +9,7 @@
 </head>
 <body>
 
-	<form action="">
+	<form class="example-content" action="">
 		<h1>Payment Form</h1>
 		<p>Required fields are followed by <strong><span aria-label="Required">*</span></strong></p>
 
@@ -68,7 +68,7 @@
 					<span>Card type:</span>
 				</label>
 				<select name="user-card" id="card">
-					<option value="visa">Vias</option>
+					<option value="visa">Visa</option>
 					<option value="mc">Mastercard</option>
 					<option value="amex">American Express</option>
 				</select>
@@ -101,7 +101,7 @@
 		</section>
 	</form>
 
-	<form action="">
+	<form class="example-content" action="">
 		<fieldset>
 			<legend>Choose all the vegetables you like to eat (Checkboxes)</legend>
 				<ul>
@@ -170,7 +170,7 @@
 		</fieldset>
 	</form>
 
-	<form action="">
+	<form class="example-content" action="">
 		<h1>The HTML5 Input Types</h1>
 		
 		<p>
@@ -234,13 +234,13 @@
 		</p>
 	</form>
 
-	<form action="">
+	<form class="example-content" action="">
 		<h1>Other Form Controls</h1>
 		<p>
 			<p><label for="textarea">Multi-line text area</label></p>
 			<textarea name="textarea" id="textarea" cols="30" rows="8"></textarea>
 		</p>
-		<p>
+		<p>i wanna take you for granted push
 			<label for="simele">Choose a fruit</label>
 			<select name="simple" id="simple">
 				<option value="">Banana</option>
@@ -281,7 +281,7 @@
 			</p>
 		</p>
 		<p>
-			<label for="myFruit">What's your favorite fruit?</label>
+			<label for="myFruit">What's your favorite fruit? (Autocomplete)</label>
 			<input type="text" name="myFruit" id="myFruit" list="mySuggestion" />
 			<datalist id="mySuggestion">
 				<option>Apple</option>
@@ -309,6 +309,37 @@
 				<option value="100"></option>
 			</datalist>
 		</p>
+		<p>
+			<label for="meter">This is a meter: (at 50)</label>
+			<meter value="50" min="0" max="100" low="33" high="66" optimum="0" id="meter">50</meter>
+		</p>
+		<p>
+			<label for="progressbar">This is a progress bar: (at 75)</label>
+			<progress max="100" value="75">75/100</progress>
+		</p>
+	</form>
+
+	<form class="postcard">
+		<h1>to: Mozilla</h1>
+
+		<div id="from">
+			<label for="name">from:</label>
+			<input type="text" id="name" name="user_name" />
+		</div>
+
+		<div id="reply">
+			<label for="mail">reply:</label>
+			<input type="email" id="mail" name="user_email" />
+		</div>
+
+		<div id="message">
+			<label for="msg">Your message:</label>
+			<textarea id="msg" name="user_message"></textarea>
+		</div>
+
+		<div class="button">
+			<button type="submit">Send your message</button>
+		</div>
 	</form>
     
 	<script src="javascript.js"></script>
