@@ -6,11 +6,10 @@
 }
 
 button,
-input,
-select,
 textarea {
     font-family: inherit;
     font-size: 100%;
+    appearance: none;
 }
 
 body {
@@ -48,6 +47,8 @@ section:last-child {
 
 button {
     margin-bottom: 0px;
+    padding: 5px;
+    border-radius: 5px;
 }
 
 p:last-child {
@@ -90,9 +91,6 @@ select,
 textarea {
     font-family: inherit;
     font-size: inherit;
-    padding: 0;
-    margin: 0;
-
 }
 
 fieldset {
@@ -199,4 +197,159 @@ form.postcard button:hover,
 form.postcard button:focus {
     background: #000;
     color: #fff;
+}
+
+input:not(input[type="range"]) {
+    border-radius: 5px;
+    box-shadow: inset 1px 1px 3px #ccc;
+    padding: 5px;
+}
+
+/* Don't display the X to remove input all the time */
+input[type="search"]:not(:focus, :active)::-webkit-search-cancel-button {
+    display: none;
+}
+
+/* Style the color picker to be a bit more approachable, but not much you can do */
+input[type="color"] {
+    border: 0;
+    padding: 0;
+    box-shadow: none;
+    background-color: none;
+}
+
+input[type="file"] {
+    height: 0;
+    padding: 0;
+    opacity: 0;
+}
+
+/*Style a file picker as a button so that you can make it more customized*/
+label[for="file"] {
+    display: inline-block;
+    box-shadow: 1px 1px 3px #ccc;
+    background: linear-gradient(to bottom, #eee, #ccc);
+    border: 1px solid rbg(169, 169, 169);
+    border-radius: 5px;
+    text-align: center;
+    line-height: 1.5;
+    padding: 5px;
+    width: 300px;
+}
+
+label[for="file"]:hover {
+    background: linear-gradient(to bottom, #fff, #ddd);
+}
+
+label[for="file"]:active {
+    box-shadow: inset 1px 1px 3px #ccc;
+}
+
+/* Style the selectors in a custom way */
+
+.custom-select select,
+.custom-select ::picker(select) {
+    appearance: base-select;
+}
+
+.custom-select select {
+    border: 2px solid #ddd;
+    background: #eee;
+    padding: 10px;
+    transition: 0.4s;
+    width: 100%;
+}
+
+.custom-select select:hover,
+.custom-select select:focus {
+    background: #ddd;
+}
+
+.custom-select select::picker-icon {
+    color: #999;
+    transition: 0.4s rotate;
+}
+
+.custom-select select:open::picker-icon {
+    rotate: 180deg;
+}
+
+.custom-select ::picker(select) {
+    border:none;
+}
+
+.custom-select option {
+    display: flex;
+    justify-content: flex-start;
+    gap: 20px;
+
+    border: 2px solid #ddd;
+    background: #eee;
+    padding: 10px;
+    transition: 0.4s;
+}
+
+/* Add border radii to the option dropdown */
+.custom-select option:first-of-type {
+    border-radius: 8px 8px 0 0;
+}
+
+.custom-select option:last-of-type {
+    border-radius: 0 0 8px 8px;
+}
+
+/* Remove ugly double borders between options, leave border on bottom of last one */
+.custom-select option:not(option:last-of-type) {
+    border-bottom: none;
+}
+
+/* Zebra striping */
+.custom-select option:nth-of-type(odd) {
+    background: #fff;
+}
+
+/* Add hover and focus styling for options in select box */
+.custom-select option:hover,
+.custom-select option:focus {
+    background: plum;
+}
+
+/* Increase font size of icons inside select options */
+.custom-select option .icon {
+    font-size: 1.6rem;
+    text-box: trim-both cap alphabetic;
+}
+
+/* Remove the icon from the main bar of the select element */
+.custom-select selectedcontent .icon {
+    display: none;
+}
+
+/* Make the current choice bold */
+.custom-select option:checked {
+    font-weight: bold;
+}
+
+/* Restyle the checkbox - move it to the right of option elements */
+.custom-select option::checkmark {
+    order: 1;
+    margin-left: auto;
+    content: "☑️";
+}
+
+
+/* Add a transition from invisibile to visible when opening and closeing the select */
+@starting-style {
+    ::picker(select):popover-open {
+        opacity: 0;
+    }
+}
+
+.custom-select ::picker(select) {
+    opacity: 0;
+    transition: all 0.4s allow-discrete;
+}
+
+.custom-select ::picker(select):popover-open {
+    opacity: 1;
 }

@@ -160,6 +160,8 @@
 		<fieldset>
 			<legend>File picker buttons</legend>
 			<p>File picker for images</p>
+
+			<label for="file">Choose an image</label>
 			<input type="file" name="file" id="file" accept="image/*" multiple>
 
 			<p>File picker for capturing from mobile devices. This is camera, camcorder, and microphone respectively</p>
@@ -240,7 +242,7 @@
 			<p><label for="textarea">Multi-line text area</label></p>
 			<textarea name="textarea" id="textarea" cols="30" rows="8"></textarea>
 		</p>
-		<p>i wanna take you for granted push
+		<p>
 			<label for="simele">Choose a fruit</label>
 			<select name="simple" id="simple">
 				<option value="">Banana</option>
@@ -319,7 +321,48 @@
 		</p>
 	</form>
 
-	<form class="postcard">
+	<form class="example-content custom-select">
+		<h1>Customizable Select Example</h1>
+		<p>
+			<label for="pet-select">Select pet:</label>
+			<select id="pet-select">
+			<!-- Allow the select button to be customized and clone the selected option 
+			 in the button. If this is not included in the markup, the browser will render 
+			 the default button and you won't be able to style as easily -->
+			<button>
+				<selectedcontent></selectedcontent>
+			</button>
+
+			<option value="">Please select a pet</option>
+			<option value="cat">
+				<span class="icon" aria-hidden="true">🐱</span
+				><span class="option-label">Cat</span>
+			</option>
+			<option value="dog">
+				<span class="icon" aria-hidden="true">🐶</span
+				><span class="option-label">Dog</span>
+			</option>
+			<option value="hamster">
+				<span class="icon" aria-hidden="true">🐹</span
+				><span class="option-label">Hamster</span>
+			</option>
+			<option value="chicken">
+				<span class="icon" aria-hidden="true">🐔</span
+				><span class="option-label">Chicken</span>
+			</option>
+			<option value="fish">
+				<span class="icon" aria-hidden="true">🐟</span
+				><span class="option-label">Fish</span>
+			</option>
+			<option value="snake">
+				<span class="icon" aria-hidden="true">🐍</span
+				><span class="option-label">Snake</span>
+			</option>
+			</select>
+		</p>
+	</form>
+
+		<form class="postcard">
 		<h1>to: Mozilla</h1>
 
 		<div id="from">
