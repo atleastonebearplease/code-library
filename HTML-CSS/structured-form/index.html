@@ -362,7 +362,82 @@
 		</p>
 	</form>
 
-		<form class="postcard">
+	<form action="" class="example-content ui-psuedo-classes">
+		<h1>Styling Based On Form Validation</h1>
+		<p>Required fields are labeled with "required."</p>
+		<fieldset>
+			<legend>Feedback form</legend>
+			<div>
+				<label for="fname">First name:</label>
+				<input type="text" id="fname" name="fname" required>
+				<span></span>
+			</div>
+			<div>
+				<label for="lname">Last name:</label>
+				<input type="text" id="lname" name="lname" required>
+				<span></span>
+			</div>
+			<div>
+				<label for="email">Email address (if you want a response):</label>
+				<input type="email" id="email" name="email">
+				<span></span>
+			</div>
+			<div>
+				<label for="age">Age (must be 12+): </label>
+				<input id="age" name="age" type="number" min="12" max="120" required />
+				<span></span>
+			</div>
+			<div>
+				<textarea name="feedback" id="feedback" placeholder="Y'all suck..." rows="4"></textarea>
+			</div>
+			<div>
+				<button type="submit">Submit</button>
+			</div>
+		</fieldset>
+	</form>
+
+	<form class="example-content enabled-disabled-read-write">
+		<h1>Styling Based On Enabled, Disabled, And Read-Only And Read-Write</h1>
+		<fieldset id="shipping">
+			<legend>Shipping address</legend>
+			<div>
+				<label for="name1">Name: </label>
+				<input id="name1" name="name1" type="text" required />
+			</div>
+			<div>
+				<label for="address1">Address: </label>
+				<input id="address1" name="address1" type="text" required />
+			</div>
+			<div>
+				<label for="zip-code1">Zip/postal code: </label>
+				<input id="zip-code1" name="zip-code1" type="text" required />
+			</div>
+		</fieldset>
+		
+		<fieldset id="billing">
+			<legend>Billing address</legend>
+			<div>
+				<label for="billing-checkbox">Same as shipping address:</label>
+				<input type="checkbox" id="billing-checkbox" checked />
+			</div>
+			<div>
+				<label for="name" class="billing-label disabled-label">Name: </label>
+				<input id="name" name="name" type="text" disabled required />
+			</div>
+			<div>
+				<label for="address2" class="billing-label disabled-label">Address:</label>
+				<input id="address2" name="address2" type="text" disabled required />
+			</div>
+			<div>
+				<label for="zip-code2" class="billing-label disabled-label">Zip/postal code:</label>
+				<input id="zip-code2" name="zip-code2" type="text" disabled required />
+			</div>
+		</fieldset>
+
+		<div><button>Submit</button></div>
+	</form>
+	
+	<form class="postcard">
 		<h1>to: Mozilla</h1>
 
 		<div id="from">
@@ -384,7 +459,6 @@
 			<button type="submit">Send your message</button>
 		</div>
 	</form>
-    
 	<script src="javascript.js"></script>
 </body>
 </html>

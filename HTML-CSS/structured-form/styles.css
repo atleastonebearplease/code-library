@@ -1,5 +1,17 @@
 @import url("../ExperimentStylingCSS/josh-c-styles.css");
 
+:root {
+    --mid-shadow:
+    1px 2px 2px hsla(0, 0%, 80%, 0.333),
+    2px 4px 4px hsla(0, 0%, 80%, 0.333),
+    4px 8px 8px hsla(0, 0%, 80%, 0.333);
+
+    --small-shadow:
+    1px 2px 2px hsla(0, 0%, 80%, 0.5);
+
+    font-size: 15px;
+}
+
 * {
     box-sizing: border-box;
     font-family: "Ubuntu-Sans", sans-serif;
@@ -57,6 +69,15 @@ p:last-child {
 
 h1 {
     margin-top: 0px;
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.7rem;
+}
+
+fieldset {
+    border-radius: 10px;
 }
 
 fieldset + fieldset {
@@ -353,3 +374,130 @@ label[for="file"]:active {
 .custom-select ::picker(select):popover-open {
     opacity: 1;
 }
+
+
+
+.ui-psuedo-classes {
+
+    input {
+        width: calc(100% - 2rem);
+    }
+
+    button[type="submit"] {
+        width: 50%;
+        margin: 0px auto;
+    }
+
+    /* Match required and optional states */
+    input:required {
+        border:2px solid;
+    }
+
+
+    /* Not necessary because optional is default; you can style if you want with this though
+        .ui-psuedo-classes input:optional {
+        border: 2px dashed;
+    } */
+    
+    legend {
+        all: unset;
+        color: white;
+        background-color: black;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    fieldset > div {
+        margin-bottom: 20px;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    input:required + span::after {
+        font-size: 0.7rem;
+        position: absolute;
+        content: "Required";
+        color: white;
+        background-color: black;
+        padding: 5px 10px;
+        top: -26px;
+        left: -70px;
+        border-radius: 5px;
+    }
+
+    /* Style in or out of range inputs */
+    input:out-of-range + span::after {
+        color: white;
+        background-color: red;
+        width: 155px;
+        content: "Outside allowable value range";
+        left: -182px;
+    }
+
+    input + span {
+        position: relative;
+    }
+
+    textarea {
+        width: calc(100% - 2rem);
+        border-radius: 5px;
+    }
+
+    /* Set to relative so the ::before and ::after content can be positioned absolutely */
+    input + span {
+        position: relative;
+    }
+
+    input + span::before {
+        position: absolute;
+        right: -20px;
+        top: 7px;
+    }
+
+    input:invalid {
+        border: 2px solid red;
+    }
+
+    input:invalid + span::before {
+        content: "✖";
+        color: red;
+    }
+
+    input:valid + span::before {
+        content: "✓";
+        color: green;
+    }
+}
+
+.enabled-disabled-read-write {
+    input {
+        width: calc(100% - 2rem);
+    }
+
+    button[type="submit"] {
+        width: 50%;
+        margin: 0px auto;
+    }
+    
+    legend {
+        all: unset;
+        color: white;
+        background-color: black;
+        padding: 5px 10px;
+        border-radius: 5px;
+    }
+
+    fieldset > div {
+        margin-bottom: 20px;
+        display: flex;
+        flex-flow: row wrap;
+    }
+
+    fieldset {
+        margin-bottom: 20px;
+    }
+
+}
+
+
+
