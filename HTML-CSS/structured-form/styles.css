@@ -84,6 +84,10 @@ fieldset + fieldset {
     margin-top: 20px;
 }
 
+fieldset:focus-within {
+    box-shadow: inset 0px 0px 4px 2px rgba(0, 0, 0, 0.07);
+}
+
 /*All of the above ar basic styling concerns. Below will be custom styling elements from 
 https://developer.mozilla.org/en-US/docs/Learn_web_development/Extensions/Forms/Styling_web_forms*/
 
@@ -471,7 +475,16 @@ label[for="file"]:active {
 
 .enabled-disabled-read-write {
     input {
-        width: calc(100% - 2rem);
+        width: 50%;
+    }
+
+    label {
+        display: inline;
+        width: 50%;
+    }
+
+    label[for="billing-checkbox"] {
+        font-size: 1.2rem;
     }
 
     button[type="submit"] {
@@ -497,6 +510,46 @@ label[for="file"]:active {
         margin-bottom: 20px;
     }
 
+    input[type="checkbox"] {
+        box-shadow: none;
+        width: fit-content;
+        margin-left: auto;
+    }
+    
+    input[type="text"]:disabled {
+        background: #eee;
+        border: 1px solid #ccc;
+    }
+
+    input[type="radio"] {
+        width:fit-content;
+    }
+
+    label:has(+ :disabled) {
+        color: #aaa;
+    }
+
+    input:read-only,
+    textarea:read-only {
+        border: 0; 
+        box-shadow: none;
+        background: white;
+    }
+
+    input ~ span {
+        position: relative;
+    }
+
+    input:default ~ span::after {
+        font-size: 0.7rem;
+        position: absolute;
+        content: "Default";
+        color: white;
+        background-color: black;
+        padding: 5px 10px;
+        right: -65px;
+        top: -3px;
+    }
 }
 
 
