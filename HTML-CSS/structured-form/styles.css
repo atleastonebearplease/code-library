@@ -224,7 +224,7 @@ form.postcard button:focus {
     color: #fff;
 }
 
-input:not(input[type="range"]) {
+form.postcard input:not(input[type="range"]) {
     border-radius: 5px;
     box-shadow: inset 1px 1px 3px #ccc;
     padding: 5px;

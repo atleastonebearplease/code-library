@@ -78,7 +78,7 @@
 					<span>Card number:</span>
 					<strong><span aria-label="required">*</span></strong>
 				</label>
-				<input type="tel" id="number" name="card-number" required>
+				<input type="text" id="number" name="card-number" inputmode="numeric"required>
 			</p>
 			<p>
 				<label for="expiration">
@@ -410,7 +410,8 @@
 			</div>
 			<div>
 				<label for="zip-code1">Zip/postal code: </label>
-				<input id="zip-code1" name="zip-code1" type="text" required />
+				<input id="zip-code1" name="zip-code1" type="text" 
+				placeholder="65251-0000" pattern="(\d{5}([\-]\d{4})?)" required />
 			</div>
 		</fieldset>
 		
