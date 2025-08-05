@@ -8,3 +8,13 @@
     box-sizing: border-box;
     font-family: "Ubuntu-Sans", sans-serif;
 }
+
+.container {
+    display: grid;
+    grid-template: 50px 50px / 50px 50px;
+
+    /* Grid long-hand
+    grid-template-columns: 50px 50px 50px;
+    grid-template-rows: 50px 50px; 
+    */
+}
