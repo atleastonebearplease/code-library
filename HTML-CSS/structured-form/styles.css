@@ -455,7 +455,7 @@ label[for="file"]:active {
     input + span::before {
         position: absolute;
         right: -20px;
-        top: 7px;
+        top: 6px;
     }
 
     input:invalid {
