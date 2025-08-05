@@ -1,20 +1,40 @@
-@import url("../ExperimentStylingCSS/josh-c-styles.css");
+/* @import url("../ExperimentStylingCSS/josh-c-styles.css"); */
 
-:root {
+/* :root {
     /*Variables here*/
-}
+/*} */
 
-* {
+/* * {
     box-sizing: border-box;
     font-family: "Ubuntu-Sans", sans-serif;
+} */
+
+body {
+    width: 100vh;
+    height: 1000vh;
 }
 
 .container {
+    width: 80%;
+    height: 80%;
+    border: 2px solid darkgray;
+    padding: 10px;
     display: grid;
-    grid-template: 50px 50px / 50px 50px;
-
-    /* Grid long-hand
-    grid-template-columns: 50px 50px 50px;
-    grid-template-rows: 50px 50px; 
-    */
+    grid-template: 150px 1fr / [start]1fr[middle]2fr[end]; 
+    grid-template-areas: "top top" "side main";
 }
+
+.header {
+    background-color: lightskyblue;
+    grid-area: top;
+    position: sticky;
+    top: 0;
+}
+
+.side-bar {
+    background-color: pink;
+}
+
+.main-content {
+    background-color: limegreen;
+} 
