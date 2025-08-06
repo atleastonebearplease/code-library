@@ -58,3 +58,53 @@ body {
   grid-row-start: 5;
   grid-row-end: 6;
 }
+
+.wrapper {
+  border: 2px solid #f76707;
+  border-radius: 5px;
+  background-color: #fff4e6;  
+  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
+
+  /* column-gap: 20px;
+  row-gap: 1em; */
+
+  gap: 1em 20px;
+
+  margin: 10px;
+}
+
+.wrapper > div {
+    border: 2px solid #ffa94d;
+    border-radius: 5px;
+    background-color: #ffd8a8;
+    padding: 1em;
+    color: #d9480f;
+}
+
+.box1 {
+    /* grid-area: 1/1/4/2; --- row start, column start, row end, column end */
+
+    grid-column: 1/2; /* grid-column: 1; here also works as this only spans one track */
+    /* grid-row: 1/4; */
+    grid-row: 1 / -1; /* This works because -1 is the final row - 
+    useful to stretch an item across the grid */
+}
+
+.box2 {
+    grid-column: 3/4;
+    grid-row: 1/ span 2; /* Use the span keyword to say how many tracks to cover */
+    /* This 'spans' 2 rows - from line 1 to 3 */
+}
+
+.box3 {
+    grid-column: 2/3;
+    grid-row: 1/2;
+}
+
+.box4 {
+    grid-column: 2/4;
+    grid-row: 3/4;
+}
