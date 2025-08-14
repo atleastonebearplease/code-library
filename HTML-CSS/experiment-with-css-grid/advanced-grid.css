@@ -1,28 +1,83 @@
-.grid-container {
+body {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-auto-rows: min-content;
+    gap: 15px;
+}
+
+.example-card {
     resize: both; /* Allow the grid container to be resized in both vertical and horizontal directions */
     overflow: auto; /* enable scrolling if we resize the container to be smaller than our grid can accomodate */
-    display: grid;
     gap: 4px;
-    padding: 4px;
-    border: 1px solid grey;
-    background-color: skyblue;
-    grid-template-rows: repeat(2, max(150px, 50%)); /* Use repeat function */
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    background-color: lightblue;
+    min-width: 100px;
+    width: 1000px;
+    max-width: 100%;
+    position: relative;
 }
 
-.grid-item {
-    background-color: #444;
-    text-align: center;
-    color: #ddd;
-    font-family: sans-serif;
-    font-size: 1.5rem;
-    padding: 12px;
+.example-card::after {
+    content: "Re-size me!";
+    font-size: 16px;
+    position: absolute;
+    bottom: 5px;
+    right: 10px;
+    overflow: visible;
 }
 
-p {
-    margin: 12px auto 24px;
+.auto-demonstration {
+
+    .auto-demonstration__grid-container {
+        display: grid;
+        gap: 4px;
+        border: 1px solid grey;
+        background-color: skyblue;
+        grid-template-rows: repeat(2, max(150px, 50%)); /* Use repeat function */
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        padding: 4px;
+        overflow: hidden;
+    }
+
+    div {
+        background-color: #444;
+        text-align: center;
+        color: #ddd;
+        font-family: sans-serif;
+        font-size: 1.5rem;
+        padding: 12px;
+    }
+
+    p {
+        margin: 12px auto 24px;
+    }
+
+    img {
+        height: 60px;
+    }
 }
 
-img {
-    height: 60px;
+.flex-and-grid {
+    .flex-and-grid__layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 8px;
+    }
+
+    .layout__child {
+        background: orange;
+        text-align: center;
+        padding: 25px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .layout__last-row {
+        grid-column: 1 / 3;
+    }
+
+    .layout__child > div {
+        height: 50px;
+        background: darkred;
+        flex: 0 1 30%;
+    }
 }
