@@ -5,6 +5,15 @@ body {
     gap: 15px;
 }
 
+body > h1 {
+    margin-bottom: 0.5rem;
+}
+
+body > p {
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+
 .example-card {
     resize: both; /* Allow the grid container to be resized in both vertical and horizontal directions */
     overflow: auto; /* enable scrolling if we resize the container to be smaller than our grid can accomodate */
@@ -25,15 +34,46 @@ body {
     overflow: visible;
 }
 
-.auto-demonstration {
+.auto-fit-demonstration {
 
-    .auto-demonstration__grid-container {
+    .auto-fit-demonstration__grid-container {
         display: grid;
         gap: 4px;
         border: 1px solid grey;
         background-color: skyblue;
         grid-template-rows: repeat(2, max(150px, 50%)); /* Use repeat function */
         grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        padding: 4px;
+        overflow: hidden;
+    }
+
+    div {
+        background-color: #444;
+        text-align: center;
+        color: #ddd;
+        font-family: sans-serif;
+        font-size: 1.5rem;
+        padding: 12px;
+    }
+
+    p {
+        margin: 12px auto 24px;
+    }
+
+    img {
+        height: 60px;
+    }
+}
+
+.auto-fill-demonstration {
+
+    .auto-fill-demonstration__grid-container {
+        display: grid;
+        gap: 4px;
+        border: 1px solid grey;
+        background-color: skyblue;
+        grid-template-rows: repeat(2, max(150px, 50%)); /* Use repeat function */
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
         padding: 4px;
         overflow: hidden;
     }
