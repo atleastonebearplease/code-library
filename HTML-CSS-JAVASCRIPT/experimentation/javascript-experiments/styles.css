@@ -8,3 +8,30 @@
     box-sizing: border-box;
     font-family: "Ubuntu-Sans", sans-serif;
 }
+
+ /*
+function Book(title, author, pageCount, hasBeenRead) {
+    if(!new.target){
+        throw Error("You must use the 'new' operator to call the constructor")
+    }
+
+    this.title = title;
+    this.author = author;
+    this.pageCount = pageCount;
+    this.hasBeenRead = hasBeenRead;
+
+    this.info = function() {
+        let readString = '';
+
+        if(hasBeenRead === true) readString = 'has been read';
+        else readString = 'has not been read';
+
+        return `${title} by ${author}, ${pageCount} pages, ${readString}`;
+    }
+}
+
+let newBook = new Book("The Hobbit", "J.R.R. Tolkien", 120, true);
+
+console.log(newBook.info());
+
+ */
