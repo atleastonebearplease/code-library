@@ -2,6 +2,10 @@ function log(item, itemDescription=""){
     console.log(`${itemDescription}: ${item}`);
 }
 
+function rawLog(item) {
+    console.log(item);
+}
+
 //Book exercise=================================================
 
 function Book(title, author, pageCount, hasBeenRead) {
