@@ -1,33 +1,8 @@
-const playerOne = {
-    name: 'tim',
-    marker: 'X'
-};
-
-const playerTwo = {
-    name: 'jenn',
-    marker: 'O'
+function log(item, itemDescription=""){
+    console.log(`${itemDescription}: ${item}`);
 }
 
-function printName(player) {
-    console.log(player.name);
-}
-
-function Player(name, marker) {
-    if(!new.target) {
-        throw Error("You must use the 'new' operator to call the constructor");
-    }
-    
-    this.name = name;
-    this.market = marker;
-    this.sayName = function() {
-        console.log(this.name);
-    }
-}
-
-const player1 = new Player('steve', 'X');
-const player2 = new Player ('also steve', 'O');
-player1.sayName();
-player2.sayName();
+//Book exercise=================================================
 
 function Book(title, author, pageCount, hasBeenRead) {
     if(!new.target){
@@ -52,4 +27,59 @@ function Book(title, author, pageCount, hasBeenRead) {
 let newBook = new Book("The Hobbit", "J.R.R. Tolkien", 120, true);
 
 console.log(newBook.info());
-console.log(Object.getPrototypeOf(player1) === Player.prototype);
+//==============================================================
+
+function Person(name){
+    this.name = name;
+}
+
+Person.prototype.sayName = function(){
+    console.log(`Hello, I'm ${this.name}!`);
+};
+
+function Player(name, marker) {
+    if(!new.target) {
+        throw Error("You must use the 'new' operator to call the constructor");
+    }
+
+    this.name = name;
+    this.marker = marker;
+}
+
+Player.prototype.getMarker = function(){
+    console.log(`My marker is '${this.marker}'`);
+};
+
+Player.prototype.sayHello = function() {
+   console.log("Hello, I'm a player!");
+};
+
+log(Object.getPrototypeOf(Player.prototype)); //returns Object.prototype
+
+//Now make 'Player' objects inherit from 'Person'
+Object.setPrototypeOf(Player.prototype, Person.prototype);
+
+log(Object.getPrototypeOf(Player.prototype));
+
+const player1 = new Player('steve', 'X');
+const player2 = new Player('also steve', 'O');
+
+player1.sayName(); // Hello, I'm steve!
+player2.sayName(); // Hello, I'm also steve!
+
+player1.getMarker(); // My marker is 'X'
+player2.getMarker(); // My marker is 'O'
+
+//====================================
+
+let x = {};
+
+log(Object.getPrototypeOf(x));
+
+log(x.toString());
+
+let y = [];
+
+log(Object.getPrototypeOf(y));
+
+log(y instanceof Array, "Y is instance of Array object");
