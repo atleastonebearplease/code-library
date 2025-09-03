@@ -1,0 +1,14 @@
+.trending-item__tagline {
+    font-size: 0.9rem;
+    min-width: 0;
+    flex-shrink: 0;
+    color: grey;
+
+/*Experimental to allow two lines, then truncation with ellipsis*/
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
