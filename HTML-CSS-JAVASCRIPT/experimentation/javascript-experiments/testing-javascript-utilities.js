@@ -1,6 +1,6 @@
-const displayList = document.querySelector('display-list')
+const displayList = document.querySelector('.display-list')
 
-function output(string){
+function log(string){
     let li = document.createElement('li');
 
     li.innerText = string;
