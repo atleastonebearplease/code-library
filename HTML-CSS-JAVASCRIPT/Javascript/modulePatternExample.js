@@ -14,10 +14,10 @@ const Formatter = (function(doc) {
 
   const writeToDOM = (selector, message) => {
     doc.querySelector(selector).innerHTML = message;
-  }
+  };
 
   return {
     makeUppercase,
     writeToDOM,
-  }
+  };
 })(document || documentMock);
