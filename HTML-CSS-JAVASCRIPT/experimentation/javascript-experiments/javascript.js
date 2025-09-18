@@ -1,71 +1,27 @@
-const documentMock = (() => ({
-  querySelector: (selector) => ({
-    innerHTML: null,
-  }),
-}))();
+let Human = {
+  species: "Human",
+  create: function(values) {
+    let instance = Object.create(this);
 
-const Formatter = (function(doc) {
-  const log = (message) => console.log(`[${Date.now()}] Logger: ${message}`);
+    Object.keys(values).forEach(function(key) {
+      instance[key] = values[key];
+    });
 
-  const makeUppercase = (text) => {
-    log("Making uppercase");
-    return text.toUpperCase();
-  };
-
-  const writeToDOM = (selector, message) => {
-    doc.querySelector(selector).innerHTML = message;
-  }
-
-  return {
-    makeUppercase,
-    writeToDOM,
-  }
-})(document || documentMock);
-
-let events = {
-  events: {}, 
-
-  on: function(eventName, fn) {
-    this.events[eventName] = this.events[eventName] || []; //If events[eventName] does not exist, make an array
-    this.events[eventName].push(fn);
+    return instance;
   },
-
-  off: function (eventName, fn) {
-    if(this.events[eventName]) {
-      for(let i = 0; i < this.events[eventName].length; i++) {
-
-        console.log(this.events[eventName[i]]);
-        if(this.events[eventName][i] === fn) {
-          this.events[eventName].splice(i, 1);
-          break;
-        }
-      }
-    }
+  saySpecies: function () {
+    console.log(this.species);
   },
-
-  emit: function(eventName, data) {
-    console.log(eventName + ' ' + 'Data: ' + data);
-    
-    if(this.events[eventName]) {
-      this.events[eventName].forEach(function(fn) {
-        fn(data);
-      });
-    }
+  sayName: function() {
+    console.log(this.name);
   }
-}
+};
 
-function alertHandler (data) {
-  alert(data);
-}
-
-events.on('people-changed', alertHandler);
-events.on('score-changed', function(data) {
-  console.log(data + " I'm inside a function");
+let Musician = Human.create({
+  species: "Musician",
+  playInstrument: function() {
+    console.log('plays' + this.instrument);
+  },
 });
 
-events.emit('people-changed', "I'm people");
-
-events.off('people-changed', alertHandler);
-
-events.emit('people-changed', "I'm people");
-events.emit('score-changed', 50);
+let will = Musician.create({name: "Will", instrument: "Guitar"});
