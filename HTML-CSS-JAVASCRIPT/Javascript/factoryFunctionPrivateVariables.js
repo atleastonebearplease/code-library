@@ -4,7 +4,7 @@
 //be more costly then using a true constructor function. Only matters if you are making thousands
 //of objects. 
 
-//Note that it is just a regular function that returns an object
+//Not that it is just a regular function that returns an object
 
 function createUser (name) {
   const discordName = "@" + name;
