@@ -4,13 +4,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-.trail {
-    position: absolute;
-    height: 20px; width: 20px;
-    border-radius: 3px;
-    background: teal;
-}
-
 html {
   font-family: sans-serif;
 }
@@ -31,4 +24,19 @@ tbody tr:hover {
 
 ul {
   list-style: none;
+}
+
+.draggable {
+  background-color: pink;
+  width: 5rem;
+  height: 5rem;
+  outline: 2px solid lightblue;
+  margin: 1rem;
+}
+
+.dropzone {
+  background-color: coral;
+  width: 15rem;
+  height: 15rem;
+  content: "";
 }

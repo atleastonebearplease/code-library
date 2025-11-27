@@ -19,28 +19,6 @@ function newVisualBlock(){
 	addToOutputList(BLOCK);
 }
 
-for(let i = 0; i < 5; i++)
-{
-	let trailer = document.createElement('div');
-	trailer.className = 'trail';
-	body.appendChild(trailer);
-}
-
-let index = 0;
-let trailers = document.querySelectorAll(".trail");
-
-
-function updateTrailers(event){
-	trailers[index].style.left = (event.clientX + 5) + "px";
-	trailers[index].style.top = (event.clientY + 5) + "px";
-
-	index++;
-
-	if(index === trailers.length) index = 0;
-}
-
-document.addEventListener('mousemove', updateTrailers);
-
 /*
     Write more permanent functions above, testing stuff below
 */
@@ -52,3 +30,28 @@ const regexpFourDigits = /\b(?<![\d.])\d+(?!\.\d)\b/g;
 
 addToOutputList(randomData.match(regexpFourDigits));
 
+
+
+function dragStartHandler(e) {
+	e.dataTransfer.items.add(e.target.innerText, "task-id");
+}
+
+let dragList = document.querySelectorAll(".draggable");
+
+for(const child of dragList) {
+	child.addEventListener("dragstart", dragStartHandler);
+}
+
+
+const target = document.querySelector(".dropzone");
+
+target.addEventListener("dragover", (e) => {
+	e.preventDefault();
+});
+
+target.addEventListener("drop", (e) => {
+	e.preventDefault();
+	const data = e.dataTransfer.getData("task-id");
+	e.target.innerText = "";
+	e.target.append(data);
+});
