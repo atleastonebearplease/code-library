@@ -1,0 +1,1 @@
+/*  let day = format(parseISO(data.days[i].datetime), "EEE"); //Mon, Tue, Wed, ...*/

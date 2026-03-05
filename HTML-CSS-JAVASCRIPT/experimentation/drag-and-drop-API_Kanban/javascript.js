@@ -53,7 +53,7 @@ function drawLineInMiddleOfTask(taskElement) {
 //Set these all to be drop targets by preventing dragover events
 columns.forEach((column) => {
 	column.addEventListener("dragover", (event) => {
-		//Test a customer type we will set later
+		//Test a custom type we will set later
 		if(event.dataTransfer.types.includes("task")) {
 			event.preventDefault(); //Make columns droppable if the data being transferred is a task
 		}
@@ -162,6 +162,7 @@ function movePlaceholder(event) {
 
 columns.forEach( (column) => {
 	column.addEventListener("dragover", movePlaceholder);
+
 	column.addEventListener("dragleave", (event) => {
 		//If we are moving into a child element, we aren't actually leaving the column
 		if(column.contains(event.relatedTarget)) return;
